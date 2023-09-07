@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+	
+	<!-- Home -->
+
+
+				<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url({{ banner.img.url }})"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Course</h1>
+						</div>
+					</div>
+				</div>
+
+
+
+	<!-- Popular -->
+
+	<div class="popular page_section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Popular Courses</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row course_boxes">
+				{% for i in courses %}
+				<!-- Popular Course Item -->
+				<div class="col-lg-4 course_box">
+					<div class="card">
+						<img class="card-img-top" src="{{i.img.url}}" alt="https://unsplash.com/@kellybrito">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">{{i.degree}}  {{i.category}}</a></div>
+							<div class="card-text">{{i.lesson}}</div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								<img src="{{i.author.url}}" alt="https://unsplash.com/@mehdizadeh">
+							</div>
+							<div class="course_author_name">{{i.teacher}}, <span>Author</span></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>{{i.price}} so'm</span></div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>		
+	</div>
+
+{% endblock %}

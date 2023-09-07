@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+	<!-- Menu -->
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background_container prlx_parent">
+			<div class="home_background prlx" style="background-image:url({{banner.img.url}})"></div>
+		</div>
+		<div class="home_content">
+			<h1>Contact</h1>
+		</div>
+	</div>
+
+	<!-- Elements -->
+
+	<div class="elements">
+
+		<!-- Buttons -->
+		<div class="buttons">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="elements_title">Buttons</div>
+						<div class="buttons_container">
+							<div class="button button_color_1 text-center trans_200"><a href="#">Read More</a></div>
+							<div class="button button_color_2 text-center trans_200"><a href="#">Read More</a></div>
+							<div class="button button_line_1 text-center trans_200"><a href="#">Read More</a></div>
+							<div class="button button_line_2 text-center trans_200"><a href="#">Read More</a></div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+
+		<!-- Icon Boxes -->
+
+		<div class="icon_boxes">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="elements_title">Icon Boxes</div>
+					</div>
+				</div>
+
+				<div class="row icon_boxes_container">
+					{% for i in services %}
+					<div class="col-lg-4 icon_box text-left d-flex flex-column align-items-start justify-content-start">
+						<div class="icon_container d-flex flex-column justify-content-end">
+							<img src="{{i.img.url}}" alt="">
+						</div>
+						<h3>{{i.title}}</h3>
+						<p>{{i.text}}</p>
+					</div>
+					{% endfor %}
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}
